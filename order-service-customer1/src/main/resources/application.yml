@@ -1,0 +1,19 @@
+server:
+  port: 8081
+
+#dubbo配置参数 
+dubbo:
+  application:
+    #服务应用的唯一标识
+    name: order-service-customer
+  #指定注册中心zookeeper的ip地址以及端口号  
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  #指定监控中心协议
+  monitor:
+    protocol: registry
+  consumer:
+  #cunsumer设置，check为true表示当远程应用报错时，消费方这边也会进行错误检查，打印错误日志，
+  #为false则关闭检查，一直等待连接
+    check: false
+  
